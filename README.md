@@ -1,4 +1,4 @@
-# CovidTracker
+# socialmedia
 
 A new Flutter project.
 

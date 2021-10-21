@@ -1,4 +1,4 @@
-name: CovidTracker
+name: socialmedia
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -18,26 +18,31 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
+  #sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  fluttericon: ^1.0.7
-  flutter_icons: ^1.1.0
-  url_launcher: ^5.5.0
-  get_it: ^1.0.3+2
-  flutter_launcher_icons: ^0.7.5
-  http: ^0.12.2
-  flutter_spinkit: ^4.1.2
-  intl: ^0.16.1
-  #shared_preferences: ^0.5.8
-  #webview_flutter: ^0.3.22+1
-
-
+  splashscreen: ^1.3.5
+  diamond_notched_fab: ^0.0.1
+  image_cropper: ^1.3.1
+  image_picker: ^0.7.4
+  shared_preferences: ^2.0.5
+  crypto_font_icons: ^0.1.0+1
+  introduction_screen: ^1.0.9
+  firebase_auth: ^1.0.3
+  firebase_core: ^1.0.3
+  firebase_database: ^6.1.2
+  cloud_firestore: ^1.0.4
+  photo_view: ^0.10.3
+  image_downloader: ^0.20.1
+  modal_progress_hud: ^0.1.3
+  webview_flutter: ^2.0.4
+  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -48,61 +53,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  fonts:
-    - family: Abel
-      fonts:
-        - asset: fonts/Abel-Regular.ttf
-    - family: DancingScript
-      fonts:
-        - asset: fonts/DancingScript-Regular.ttf
-    - family: IndieFlower
-      fonts:
-        - asset: fonts/IndieFlower-Regular.ttf
-    - family: Lobster
-      fonts:
-        - asset: fonts/Lobster-Regular.ttf
-    - family: Pacifico
-      fonts:
-        - asset: fonts/Pacifico-Regular.ttf
-  assets:
-    # Loading Page Image
-    - images/LoadingPageImage.jpg
-    # Health Page Images
-    - images/healthPage_Imgs/doctors.png
-    - images/healthPage_Imgs/washHands.png
-    - images/healthPage_Imgs/medicalCare.png
-    - images/healthPage_Imgs/socialDistance_wearMasks.png
-    # World Page Images
-    - images/worldPage_Imgs/affected_world_map.jpg
-    - images/worldPage_Imgs/darkThemeEarthIcon.jpg
-    - images/worldPage_Imgs/lightThemeEarthIcon.jpg
-    # Developer Page Images
-    - images/developerPage_Imgs/myPic.jpeg
-    - images/developerPage_Imgs/socialMediaContacts.png
-    # --- Social Media Icons
-    - images/developerPage_Imgs/GmailIcon.png 
-    - images/developerPage_Imgs/GitHubIcon.png
-    - images/developerPage_Imgs/TwitterIcon.png
-    - images/developerPage_Imgs/TelegramIcon.png
-    - images/developerPage_Imgs/InstagramIcon.jpg
-    # Support Page Images
-    - images/supportPage_Imgs/donationGifts1.png
-    - images/supportPage_Imgs/donationGifts2.png
-    - images/supportPage_Imgs/donationGifts3.png
-    - images/supportPage_Imgs/donationGifts4.png
-    - images/supportPage_Imgs/donationGifts5.png
-    - images/supportPage_Imgs/donationGifts6.png
-    - images/supportPage_Imgs/donationMakeItRain.png
-    - images/supportPage_Imgs/maleIcon.png
-    # Infrastructure Page Images
-    - images/infrastructurePage_Imgs/clientServer.png
-    - images/infrastructurePage_Imgs/APIIcon.png
-    - images/infrastructurePage_Imgs/DartLangIcon.png
-    - images/infrastructurePage_Imgs/FlutterIcon.png
-    # Easter Egg
-    - images/winnerQRCode.jpg
-    
-
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -110,8 +60,20 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/1.jpg
+    - assets/images/2.jpg
+    - assets/images/3.png
+    - assets/images/4.jpg
+    - assets/images/11.png
+    - assets/images/77.jpg
+    - assets/images/newsPlaceholder.jpg
+    - assets/images/newsPlaceholder2.jpg
+    - assets/images/newsPlaceholder3.png
+    - assets/images/introscreen/5.png
+    - assets/images/introscreen/14.png
+    - assets/images/GroupChatDP.png
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -125,10 +87,32 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Cyberpunk
+      fonts:
+        - asset: assets/fonts/Cyberpunk/Cyberpunk.ttf
+    - family: Cyberpunk2
+      fonts:
+        - asset: assets/fonts/Cyberpunk-2/Cyberpunk.ttf
+    - family: CyberpunkRegular
+      fonts:
+        - asset: assets/fonts/Cyberpunk-Regular/Cyberpunk-Regular.ttf
+    - family: BlenderProBold
+      fonts:
+        - asset: assets/fonts/Blender-Pro-Bold/Blender-Pro-Bold.otf
+    - family: BlenderProBook
+      fonts:
+        - asset: assets/fonts/Blender-Pro-Book/Blender-Pro-Book.otf
+
+    - family: Ailerons
+      fonts:
+        - asset: assets/fonts/Ailerons/Ailerons/Ailerons-Regular.otf
+    - family: Anurati
+      fonts:
+        - asset: assets/fonts/Anurati/Anurati/Anurati-Regular.otf
+    - family: Blanka
+      fonts:
+        - asset: assets/fonts/Blanka/Blanka/Blanka-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
